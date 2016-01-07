@@ -1,6 +1,14 @@
 ## Laravel MVC Blog
 
-This is my blog written in PHP, JS, jQuery, and CSS ON THE LARAVEL FRAMEWORk.
+This is my blog written in PHP, JS, jQuery, and CSS on the Laravel Framework.
+
+## Getting Started
+- Clone this repository
+- Create a database for this application
+- Create a '.env.local.php' file inside of 'blog.dev/'
+- Add the contents of 'env-template.php' to 'env.local.php'
+- Add your database logins to the values
+- Run 'composer install'
 
 The project is built using a Model View Controller Convention.
 
