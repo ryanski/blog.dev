@@ -21,6 +21,10 @@ Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
 
 Route::get('/rolldice/{guess}', 'HomeController@rollDice');
+
+Route::get('/login', 'HomeController@getLogin');
+Route::post('/login', 'HomeController@postLogin');
+Route::get('/logout', 'HomeController@getLogout');
  
 
 Route::get('/form', 'HomeController@showForm');
@@ -48,6 +52,19 @@ Route::get('/test', function() {
 Route::get('/my-first-view', function(){
 	return View::make('my-first-view');
 });
+
+Route::get('/session/{value}', function($value){
+
+	Session::put('some-key', $value);
+
+	if(Session::has('some-key')) {
+		echo Session::get('some-key');
+	}
+
+
+});
+
+Route::resource('tags', 'TagsController');
 
 
 

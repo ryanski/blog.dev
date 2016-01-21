@@ -5,6 +5,7 @@
 	@foreach($posts as $post)
 		<h1><a href="{{{ action ('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a></h1>
 		<p>{{{ $post->body }}}</p>
+		<p>{{{ Post::first()->created_at->diffForHUmans() }}}</p>
 	@endforeach
 
 	{{ $posts->links() }}

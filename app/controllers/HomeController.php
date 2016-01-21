@@ -46,4 +46,32 @@ class HomeController extends BaseController {
 	);
 		return View::make('roll-dice', $data);
 	}
+
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+
+	public function postLogin()
+	{
+		$email = Input::get('email');
+		$password = Input::get('password');
+		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+			Success::flash('successMessage', 'Welcome to the blog, user!');
+    		return Redirect::intended('/posts');
+		} else {
+    	// login failed, go back to the login screen
+		 Session::flash('error message', 'Login failed.  Your username and/or password don\'t match.');
+		return Redirect::back()->withInput();
+		}
+	}
+
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::action('HomeController@showWelcome');
+		// Auth::logout();
+		// Session::flash('successMessage', 'Thank you, come again!');
+		// return Redirect::action('PostsController@index');
+	}
 }
