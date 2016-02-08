@@ -66,6 +66,10 @@ Route::get('/session/{value}', function($value){
 
 Route::resource('tags', 'TagsController');
 
+Route::get('/laravel', function() {
+	
+})
+
 
 
 
