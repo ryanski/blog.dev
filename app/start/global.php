@@ -49,7 +49,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
-	return 'There was an error'.$code;
+	// return 'There was an error '.$code;
 });
 
 /*

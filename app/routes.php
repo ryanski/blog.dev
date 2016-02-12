@@ -53,6 +53,9 @@ Route::get('/my-first-view', function(){
 	return View::make('my-first-view');
 });
 
+Route::get('/newwebsite', function(){
+	return View::make('newwebsite');
+});
 Route::get('/session/{value}', function($value){
 
 	Session::put('some-key', $value);
@@ -68,7 +71,7 @@ Route::resource('tags', 'TagsController');
 
 Route::get('/laravel', function() {
 	
-})
+});
 
 
 
